@@ -6,22 +6,22 @@
         <div class="chatboxCont">
           <div class="chatboxHeader">
             <img
-              class="logoHeader"
-              src="../../public/assets/icon.svg"
-              alt="logo"
+                class="logoHeader"
+                src="../../public/assets/icon.svg"
+                alt="logo"
             />
             <p class="textHeader">Melodious</p>
           </div>
           <div class="chatbox" id="chatbox">
             <div class="imessage">
               <div
-                :class="[message.author == 'server' ? 'from-them' : 'from-me']"
-                v-for="(message, idx) in chat_box_repertory"
-                :key="idx"
+                  :class="[message.author == 'server' ? 'from-them' : 'from-me']"
+                  v-for="(message, idx) in chat_box_repertory"
+                  :key="idx"
               >
                 <div v-if="message.author == server" class="msgLogo"></div>
                 <p
-                  :class="[
+                    :class="[
                     message.author == 'server' ? 'from-them' : 'from-me',
                   ]"
                 >
@@ -35,19 +35,19 @@
           </div>
           <div class="inputBox">
             <input
-              v-if="!loading"
-              class="inputUser"
-              type="text"
-              @keyup.enter="SendBot(input)"
-              v-model="input"
-              placeholder="Parle moi de la funk"
+                v-if="!loading"
+                class="inputUser"
+                type="text"
+                @keyup.enter="SendBot(input)"
+                v-model="input"
+                placeholder="Parle-moi de la funk"
             />
             <input
-              v-if="!loading"
-              class="send"
-              type="button"
-              @click="SendBot(input)"
-              value
+                v-if="!loading"
+                class="send"
+                type="button"
+                @click="SendBot(input)"
+                value
             />
           </div>
         </div>
@@ -66,8 +66,8 @@
     </div>
   </div>
 </template>
-  
-  <script>
+
+<script>
 export default {
   name: "SiteDemo",
   data() {
@@ -105,9 +105,9 @@ export default {
 
       let botResponse;
       await fetch("http://127.0.0.1:5000/chat", requestOptions)
-        .then((response) => response.text())
-        .then((result) => (botResponse = JSON.parse(result)))
-        .catch((error) => console.log("error", error));
+          .then((response) => response.text())
+          .then((result) => (botResponse = JSON.parse(result)))
+          .catch((error) => console.log("error", error));
       console.log(botResponse);
       let answer = botResponse.answer;
       this.chat_history.push([query, answer]);
@@ -389,5 +389,12 @@ input:focus-visible {
 
 .bold {
   font-weight: bold;
+}
+
+/* Media Query pour les écrans de petite taille */
+@media only screen and (max-width: 768px) {
+  .description {
+    display: none; /* Cacher la classe description sur les petits écrans */
+  }
 }
 </style>

@@ -30,15 +30,15 @@ export default {
   height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 3vh;
   margin-top: 4vh;
 }
 
 .cta {
-  height: 70%;
   width: 45%;
   margin-left: 5vw;
+  text-align: center;
 }
 
 img {
@@ -51,6 +51,7 @@ h1 {
   text-align: start;
   font-weight: bolder;
 }
+
 p {
   font-size: 2vh;
   text-align: start;
@@ -70,7 +71,6 @@ p {
   cursor: pointer;
   background-color: #000000;
   color: rgb(255, 255, 255);
-  cursor: pointer;
   transition: color 0.3s ease;
 }
 
@@ -80,5 +80,22 @@ p {
 
 .button:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  img {
+    width: 50%;
+  }
 }
 </style>
