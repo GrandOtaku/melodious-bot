@@ -9,7 +9,7 @@
       <div class="mid">
         <p>Bénéficiez de toute l’expertise musical de Melodious.</p>
         <div class="prix">
-          <h1>4.99€</h1>
+          <h1>2.99€</h1>
           <h4 class="mois">/ mois</h4>
         </div>
       </div>
@@ -22,20 +22,7 @@
       <div class="mid">
         <p>Bénéficiez de toute l’expertise musical de Melodious.</p>
         <div class="prix">
-          <h1>9.99€</h1>
-          <h4 class="mois">/ mois</h4>
-        </div>
-      </div>
-      <input class="bouton" type="button" value="S'abonner">
-    </div>
-    <div class="container">
-      <div class="top">
-        <h1>Mensuel</h1>
-      </div>
-      <div class="mid">
-        <p>Bénéficiez de toute l’expertise musical de Melodious.</p>
-        <div class="prix">
-          <h1>9.99€</h1>
+          <h1>29.99€</h1>
           <h4 class="mois">/ an</h4>
         </div>
       </div>
