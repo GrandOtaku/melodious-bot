@@ -27,9 +27,9 @@
                 >
                   <span>{{ message.text }}</span>
                 </p>
-                <ul v-if="message.playlist && message.playlist.length > 0">
-                  <li v-for="(track, index) in message.playlist" :key="`track-${index}`">
-                    {{ track }}
+                <ul v-if="message.playlists && message.playlists.length > 0">
+                  <li v-for="(playlist, index) in message.playlists" :key="`playlist-${index}`">
+                    <a :href="playlist.url" target="_blank">{{ playlist.name }}</a>
                   </li>
                 </ul>
               </div>
@@ -118,9 +118,9 @@ export default {
       // this.chat_history.push([query, answer]);
       // await this.chat_box_repertory.push({ author: "server", text: answer });
       let answer = botResponse.answer;
-      let playlist = botResponse.playlists || []; // Assurez-vous que la playlist existe, sinon utilisez un tableau vide
+      let playlists = botResponse.playlists || [];
       this.chat_history.push([query, answer]);
-      await this.chat_box_repertory.push({ author: "server", text: answer, playlist: playlists });
+      await this.chat_box_repertory.push({ author: "server", text: answer, playlists: playlists }
       // ptit await pour attendre qu'il ai biens envoyé affiché le message pour alligner le scroll dessus et enlever le load
       objDiv.scroll(0, objDiv.scrollHeight);
 
