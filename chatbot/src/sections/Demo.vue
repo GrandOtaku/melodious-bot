@@ -90,12 +90,7 @@ export default {
       this.loading = true;
       this.input = "";
       // ptit await pour attendre qu'il ai biens envoyé affiché le message pour alligner le scroll dessus
-      // await this.chat_box_repertory.push({ author: "client", text: query });
-
-      let answer = botResponse.answer;
-      let playlist = botResponse.playlist || []; // Assurez-vous que la playlist existe, sinon utilisez un tableau vide
-      this.chat_history.push([query, answer]);
-      await this.chat_box_repertory.push({ author: "client", text: answer, playlist: playlists });
+      await this.chat_box_repertory.push({ author: "client", text: query });
 
       objDiv.scroll(0, objDiv.scrollHeight);
 
@@ -119,9 +114,13 @@ export default {
           .then((result) => (botResponse = JSON.parse(result)))
           .catch((error) => console.log("error", error));
       console.log(botResponse);
+      // let answer = botResponse.answer;
+      // this.chat_history.push([query, answer]);
+      // await this.chat_box_repertory.push({ author: "server", text: answer });
       let answer = botResponse.answer;
+      let playlist = botResponse.playlists || []; // Assurez-vous que la playlist existe, sinon utilisez un tableau vide
       this.chat_history.push([query, answer]);
-      await this.chat_box_repertory.push({ author: "server", text: answer });
+      await this.chat_box_repertory.push({ author: "server", text: answer, playlist: playlists });
       // ptit await pour attendre qu'il ai biens envoyé affiché le message pour alligner le scroll dessus et enlever le load
       objDiv.scroll(0, objDiv.scrollHeight);
 
