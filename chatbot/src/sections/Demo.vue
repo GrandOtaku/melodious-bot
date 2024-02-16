@@ -27,6 +27,11 @@
                 >
                   <span>{{ message.text }}</span>
                 </p>
+                <ul v-if="message.playlist && message.playlist.length > 0">
+                  <li v-for="(track, index) in message.playlist" :key="`track-${index}`">
+                    {{ track }}
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -85,7 +90,12 @@ export default {
       this.loading = true;
       this.input = "";
       // ptit await pour attendre qu'il ai biens envoyé affiché le message pour alligner le scroll dessus
-      await this.chat_box_repertory.push({ author: "client", text: query });
+      // await this.chat_box_repertory.push({ author: "client", text: query });
+
+      let answer = botResponse.answer;
+      let playlist = botResponse.playlist || []; // Assurez-vous que la playlist existe, sinon utilisez un tableau vide
+      this.chat_history.push([query, answer]);
+      await this.chat_box_repertory.push({ author: "client", text: query, playlist: playlist });
 
       objDiv.scroll(0, objDiv.scrollHeight);
 
