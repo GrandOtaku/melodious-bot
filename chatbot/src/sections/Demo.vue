@@ -95,7 +95,7 @@ export default {
       let answer = botResponse.answer;
       let playlist = botResponse.playlist || []; // Assurez-vous que la playlist existe, sinon utilisez un tableau vide
       this.chat_history.push([query, answer]);
-      await this.chat_box_repertory.push({ author: "client", text: query, playlist: playlist });
+      await this.chat_box_repertory.push({ author: "client", text: answer, playlist: playlists });
 
       objDiv.scroll(0, objDiv.scrollHeight);
 
