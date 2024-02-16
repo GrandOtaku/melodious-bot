@@ -7,7 +7,7 @@
         <p class="sticker">Populaire</p>
       </div>
       <div class="mid">
-        <p>Bénéficiez de toute l’expertise musical de Melodious.</p>
+        <p>Soutenez le projet Melodious en nous payant un café.</p>
         <div class="prix">
           <h1>2.99€</h1>
           <h4 class="mois">/ mois</h4>
@@ -17,10 +17,10 @@
     </div>
     <div class="container">
       <div class="top">
-        <h1>3 mois</h1>
+        <h1>Annuel</h1>
       </div>
       <div class="mid">
-        <p>Bénéficiez de toute l’expertise musical de Melodious.</p>
+        <p>Rejoingnez la communautée privé de beta test afin de découvrir en avant première les dernières versions de Melodious</p>
         <div class="prix">
           <h1>29.99€</h1>
           <h4 class="mois">/ an</h4>
